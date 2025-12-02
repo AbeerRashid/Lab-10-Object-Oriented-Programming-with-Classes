@@ -7,7 +7,7 @@ class ProductProperties {
     }
 
     displayInfo() {
-        console.log(`Product: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity}`);
+        console.log(`ProductProperties: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity}`);
     }
     getTotalValue() {
         return parseFloat((this.price * this.quantity).toFixed(2));
@@ -24,7 +24,7 @@ function PerishableProduct(name, price, quantity, expirationDate) {
     this.expirationDate = expirationDate;
 }
 
-PerishableProduct.prototype = ProductProperties.create(Product.prototype); 
+PerishableProduct.prototype = ProductProperties.create(Product.prototype);
 PerishableProduct.prototype.constructor = PerishableProduct;
 PerishableProduct.prototype.toString = function() {
     var parentString = Product.prototype.toString.call(ProductProperties);
