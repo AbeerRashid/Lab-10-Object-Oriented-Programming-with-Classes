@@ -30,14 +30,14 @@ PerishableProduct.prototype.toString = function() {
 
 
 //Part 3: Static Methods and Properties
-ProductProperties.applyDiscount = function(ProductProperties, discount) {
+ProductProperties.applyDiscount = function(Product, discount) {
     console.log("\n--- Applying " + (discount * 100) + "% Discount ---");
-    for (var i = 0; i < ProductProperties.length; i++) {
-        var ProductProperties = ProductProperties[i];
-        var originalPrice = ProductProperties.price;
+    for (var i = 0; i < Product.length; i++) {
+        var Product = Product[i];
+        var originalPrice = Product.price;
         // Update the price directly
-        ProductProperties.price = ProductProperties.price * (1 - discount);
-        console.log(ProductProperties.name + ": Original Price $" + originalPrice.toFixed(2) + " -> New Price $" + ProductProperties.price.toFixed(2));
+        Product.price = Product.price * (1 - discount);
+        console.log(Product.name + ": Original Price $" + originalPrice.toFixed(2) + " -> New Price $" + Product.price.toFixed(2));
     }
     console.log("--- Discount Applied Successfully ---\n");
 };
