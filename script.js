@@ -6,15 +6,12 @@ class ProductProperties {
         this.quantity = quantity;
     }
 
-    displayInfo() {
-        console.log(`ProductProperties: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity}`);
-    }
     getTotalValue() {
         return parseFloat((this.price * this.quantity).toFixed(2));
     }
 
     toString() {
-    return `ProductProperties(Name: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity})`;
+    return `ProductProperties(Name: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity})`;
     }
 };
 
@@ -33,14 +30,14 @@ PerishableProduct.prototype.toString = function() {
 
 
 //Part 3: Static Methods and Properties
-Product.applyDiscount = function(products, discount) {
+ProductProperties.applyDiscount = function(ProductProperties, discount) {
     console.log("\n--- Applying " + (discount * 100) + "% Discount ---");
-    for (var i = 0; i < products.length; i++) {
-        var product = products[i];
-        var originalPrice = product.price;
+    for (var i = 0; i < ProductProperties.length; i++) {
+        var ProductProperties = ProductProperties[i];
+        var originalPrice = ProductProperties.price;
         // Update the price directly
-        product.price = product.price * (1 - discount);
-        console.log(product.name + ": Original Price $" + originalPrice.toFixed(2) + " -> New Price $" + product.price.toFixed(2));
+        ProductProperties.price = ProductProperties.price * (1 - discount);
+        console.log(ProductProperties.name + ": Original Price $" + originalPrice.toFixed(2) + " -> New Price $" + ProductProperties.price.toFixed(2));
     }
     console.log("--- Discount Applied Successfully ---\n");
 };
