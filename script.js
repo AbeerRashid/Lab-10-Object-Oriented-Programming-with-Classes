@@ -105,10 +105,3 @@ if (foundProduct) {
 }
 console.log(searchOutput);
 console.log("--- Search Completed ---\n");
-
-// === Display Summary in HTML ===
-var outputElement = document.getElementById('output');
-
-if (outputElement) {
-    outputElement.textContent = "\nInventory Initialized with 5 products.\nDiscount Rate: " + (DISCOUNT_RATE * 100) + "%\n\nTotal Inventory Value BEFORE Discount: $" + valueBefore.toFixed(2) + "\nTotal Inventory Value AFTER Discount:  $" + valueAfter.toFixed(2) + "\n\nDiscount Saving: $" + (valueBefore - valueAfter).toFixed(2) + "\n\n" + searchOutput;
-};
