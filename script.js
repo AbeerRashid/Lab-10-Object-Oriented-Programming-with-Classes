@@ -66,9 +66,9 @@ Store.prototype.findProductByName = function(name) {
 }
 //Part 5: Testing the System
 // 1. Create Prductions
-var apple = new Product('Apple', 2.50, 50);
-var chips = new Product('Potato Chips', 3.99, 30);
-var soda = new Product('Coke Soda (12-pack)', 7.50, 25);
+var apple = new ProductProperties ('Apple', 2.50, 50);
+var chips = new ProductProperties ('Potato Chips', 3.99, 30);
+var soda = new ProductProperties ('Coke Soda (12-pack)', 7.50, 25);
 var milk = new PerishableProduct('Milk', 4.50, 15, '2024-12-15');
 var lettuce = new PerishableProduct('Romaine Lettuce', 1.99, 20, '2024-12-05');
 
@@ -85,7 +85,7 @@ var totalValueBefore = myStore.getTotalValue();
 
 // 3. Apply 15% discount using the static method
 var DISCOUNT_RATE = 0.15;
-Product.applyDiscount(myStore.products, DISCOUNT_RATE);
+ProductProperties.applyDiscount(myStore.products, DISCOUNT_RATE);
 
 // Get value after discount
 var totalValueAfter = myStore.getTotalValue();
