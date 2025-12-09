@@ -5,13 +5,12 @@ function ProductProperties (name, price, quantity) {
         this.quantity = quantity;
     }
 
-    getTotalValue() {
-        return parseFloat((this.price * this.quantity).toFixed(2));
-    }
+ProductProperties.prototype.getTotalValue = function() {
+    return parseFloat((this.price * this.quantity).toFixed(2));
+};
 
-    toString() {
+ProductProperties.prototype.toString = function() {
     return `ProductProperties(Name: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity})`;
-    }
 };
 
 //Part 2: Adding Inheritance
