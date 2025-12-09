@@ -32,8 +32,7 @@ var parentString = ProductProperties.prototype.toString.call(this);
 //Part 3: Static Methods and Properties
 ProductProperties.applyDiscount = function(Product, discount) {
     console.log("\n--- Applying " + (discount * 100) + "% Discount ---");
-    for (var i = 0; i < Product.length; i++) {
-        var Product = Product[i];
+    for (var i = 0; i < products.length; i++) { var product = products[i];
         var originalPrice = Product.price;
         // Update the price directly
         Product.price = Product.price * (1 - discount);
