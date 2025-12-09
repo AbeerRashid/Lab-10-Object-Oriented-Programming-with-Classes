@@ -30,13 +30,14 @@ var parentString = ProductProperties.prototype.toString.call(this);
 
 
 //Part 3: Static Methods and Properties
-ProductProperties.applyDiscount = function(Product, discount) {
+ProductProperties.applyDiscount = function(inventory, discount) {
     console.log("\n--- Applying " + (discount * 100) + "% Discount ---");
-    for (var i = 0; i < products.length; i++) { var product = products[i];
-        var originalPrice = Product.price;
+    for (var i = 0; i < inventory.length; i++) {
+        var product = inventory[i];
+        var originalPrice = product.price;
         // Update the price directly
-        Product.price = Product.price * (1 - discount);
-        console.log(Product.name + ": Original Price $" + originalPrice.toFixed(2) + " -> New Price $" + Product.price.toFixed(2));
+        product.price = product.price * (1 - discount);
+        console.log(product.name + ": Original Price $" + originalPrice.toFixed(2) + " -> New Price $" + product.price.toFixed(2));
     }
     console.log("--- Discount Applied Successfully ---\n");
 };
@@ -95,12 +96,12 @@ console.log("Total Store Value After Discount: $" + totalValueAfter.toFixed(2));
 var searchProductName = 'Milk';
 var foundProduct = myStore.findProductByName(searchProductName);
 
-console.log("\n--- Searching for Product: " + searchProductName + " ---");
-var searchOutput = 'Product not found.';
+console.log("\n--- Searching for product: " + searchProductName + " ---");
+var searchOutput = 'product not found.';
 if (foundProduct) {
     searchOutput = foundProduct.toString();
 } else {
-    searchOutput = 'Product not found.';
+    searchOutput = 'product not found.';
 }
 console.log(searchOutput);
 console.log("--- Search Completed ---\n");
