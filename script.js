@@ -21,10 +21,10 @@ function PerishableProduct(name, price, quantity, expirationDate) {
     this.expirationDate = expirationDate;
 }
 
-PerishableProduct.prototype = ProductProperties.create(Product.prototype);
+PerishableProduct.prototype = Object.create(ProductProperties.prototype);
 PerishableProduct.prototype.constructor = PerishableProduct;
 PerishableProduct.prototype.toString = function() {
-    var parentString = Product.prototype.toString.call(ProductProperties);
+var parentString = ProductProperties.prototype.toString.call(this);
     return parentString + ", Expiration Date: " + this.expirationDate;
 };
 
